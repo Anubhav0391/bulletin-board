@@ -5,12 +5,12 @@ import { IoIosAddCircle } from "react-icons/io";
 const Board = () => {
   const [notes, setNotes] = useState([]);
 
-  const handleAdd = (text) => {
+  const handleAdd = () => {
     setNotes((pre) => [
       ...pre,
       {
         id: pre.length + 1,
-        content: text,
+        content: '',
         position: {
           right: `${Math.ceil(Math.random() * (window.innerWidth - 200))}px`,
           top: `${Math.ceil(Math.random() * (window.innerHeight - 200))}px`,
@@ -81,7 +81,7 @@ const Board = () => {
           top: "30px",
           right: "30px",
         }}
-        onClick={() => handleAdd("New Note")}
+        onClick={handleAdd}
         fontSize={40}
       />
     </div>
