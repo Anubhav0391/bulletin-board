@@ -70,7 +70,7 @@ const Note = ({
       {editing ? (
         <>
           <textarea
-          placeholder="Add Note"
+            placeholder="Add Note"
             style={{
               backgroundColor: "yellow",
               outline: "none",
@@ -99,7 +99,7 @@ const Note = ({
         <>
           <p
             style={{
-              color:content && 'gray',
+              color:!content && 'gray',
               fontSize: "25px",
               fontFamily: "Shadows Into Light",
             }}
