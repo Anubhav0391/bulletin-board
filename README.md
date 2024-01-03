@@ -31,4 +31,4 @@ overlapping with them.
 ## Pages:
 
 ### Board 
-<img src="https://i.ibb.co/xYMC19V/Screenshot-36.png"/>
+<img src="https://i.ibb.co/8zv35zP/Screenshot-60.png"/>
