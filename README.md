@@ -1,6 +1,6 @@
 # Bulletin/Notice Board
 
-It is a simple and efficient notice board app built with React. The main objective behind this to master the drag functionality.
+It is a simple and efficient digital notice board app built with React and CSS. It allows users to create, edit, delete, and pin the notes.
 
 ## Features: 
 
