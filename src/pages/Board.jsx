@@ -1,37 +1,9 @@
 import React, { useState } from "react";
-import Note from "./Note";
+import Note from "../components/Note";
 import { IoIosAddCircle } from "react-icons/io";
 
 const Board = () => {
-  const [notes, setNotes] = useState([
-    {
-      id: 1,
-      content: 'This is initial note-1',
-      position: {
-        right: `${Math.ceil(Math.random() * (window.innerWidth - 200))}px`,
-        top: `${Math.ceil(Math.random() * (window.innerHeight - 200))}px`,
-      },
-      pinned:false
-    },
-    {
-      id: 2,
-      content: 'This is initial note-2',
-      position: {
-        right: `${Math.ceil(Math.random() * (window.innerWidth - 200))}px`,
-        top: `${Math.ceil(Math.random() * (window.innerHeight - 200))}px`,
-      },
-      pinned:false
-    },
-    {
-      id: 3,
-      content: 'This is initial note-3',
-      position: {
-        right: `${Math.ceil(Math.random() * (window.innerWidth - 200))}px`,
-        top: `${Math.ceil(Math.random() * (window.innerHeight - 200))}px`,
-      },
-      pinned:false
-    },
-  ]);
+  const [notes, setNotes] = useState([]);
 
   const handleAdd = (text) => {
     setNotes((pre) => [

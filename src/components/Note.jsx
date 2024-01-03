@@ -13,10 +13,12 @@ const Note = ({
   const [editing, setEditing] = useState(false);
   const [value, setValue] = useState(content);
   const dragIt = useRef(null);
+  const [cursor, setCursor] = useState("grab");
 
   const handleDrag = (note) => {
     if (!pinned) {
       note.addEventListener("mousedown", (e) => {
+        setCursor("grabbing")
         let offsetX = e.clientX - e.target.getBoundingClientRect().left;
         let offsetY = e.clientY - e.target.getBoundingClientRect().top;
 
@@ -26,6 +28,7 @@ const Note = ({
         }
 
         function handleMouseUp() {
+          setCursor("grab")
           document.removeEventListener("mousemove", handleMouseMove);
           document.removeEventListener("mouseup", handleMouseUp);
         }
@@ -59,7 +62,8 @@ const Note = ({
         overflow: "hidden",
         backgroundColor: "yellow",
         position: "absolute",
-        cursor: "grab",
+        zIndex:pinned?2:1,
+        cursor: cursor,
         boxShadow: "5px 5px 15px 0 rgba(0, 0, 0, .2)",
       }}
     >
