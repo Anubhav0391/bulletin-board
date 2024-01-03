@@ -70,6 +70,7 @@ const Note = ({
       {editing ? (
         <>
           <textarea
+          placeholder="Add Note"
             style={{
               backgroundColor: "yellow",
               outline: "none",
@@ -98,11 +99,12 @@ const Note = ({
         <>
           <p
             style={{
+              color:content && 'gray',
               fontSize: "25px",
               fontFamily: "Shadows Into Light",
             }}
           >
-            {content}
+            {content||"Add Note"}
           </p>
           <div style={{ fontSize: "20px" }}>
             <MdOutlineModeEdit

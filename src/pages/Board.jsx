@@ -15,20 +15,20 @@ const Board = () => {
           right: `${Math.ceil(Math.random() * (window.innerWidth - 200))}px`,
           top: `${Math.ceil(Math.random() * (window.innerHeight - 200))}px`,
         },
-        pinned:false
+        pinned: false,
       },
     ]);
   };
 
   const togglePin = (index) => {
-    const toggled = notes.map((el,i) =>
+    const toggled = notes.map((el, i) =>
       index === i ? { ...el, pinned: !el.pinned } : el
     );
     setNotes(toggled);
   };
 
   const handleEdit = (text, index) => {
-    const edited = notes.map((el,i) =>
+    const edited = notes.map((el, i) =>
       i === index ? { ...el, content: text } : el
     );
     setNotes(edited);
@@ -51,16 +51,29 @@ const Board = () => {
         overflow: "hidden",
       }}
     >
-      {notes.map((note, i) => (
-        <Note
-          key={note.id}
-          index={i}
-          {...note}
-          handleEdit={handleEdit}
-          handleDelete={handleDelete}
-          togglePin={togglePin}
-        />
-      ))}
+      {notes.length == 0 ? (
+        <h1
+          style={{
+            textAlign: "center",
+            width: "50%",
+            margin: "200px auto",
+            fontSize: "60px",
+          }}
+        >
+          Start adding notes by clicking top-right "+" button
+        </h1>
+      ) : (
+        notes.map((note, i) => (
+          <Note
+            key={note.id}
+            index={i}
+            {...note}
+            handleEdit={handleEdit}
+            handleDelete={handleDelete}
+            togglePin={togglePin}
+          />
+        ))
+      )}
 
       <IoIosAddCircle
         style={{
